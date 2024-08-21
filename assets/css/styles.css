@@ -14,7 +14,9 @@ body{
   -o-animation: Coolgradient 41s linear infinite;
   animation: Coolgradient 41s linear infinite;
 }
-  
+
+
+
 @-webkit-keyframes Coolgradient {
   0%{background-position:5% 0%}
   50%{background-position:96% 100%}
@@ -117,7 +119,7 @@ textarea {
 }
   
 #btn-copiar {
-  translate: 27px 117px;
+  translate: 27px 101px;
 }
 
 #btns-aside {
@@ -147,11 +149,6 @@ textarea {
 
 #tercer-icon {
   margin-top: 10px;
-}
-
-.rango, input {
-  width: 13.8vw;
-
 }
 
 #cuarto-icon {
