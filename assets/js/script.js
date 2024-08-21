@@ -1,71 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encriptador de mesajes secretos.</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-</head>
-<body>
-    <div class="titulo">
-      <h1>ASCII secret message</h1>
-    </div>  
-    <div class="contenedor-todo">
-        <div id="contenido-principal">  
-          <form id="cifrador" autocomplete="off">
-            <textarea id="ingresar-texto" name="contenido-ingresar" placeholder="Ingrese su texto aquí." type="text"></textarea>
-        </form>
-            <div class="botones-principales">
-                <div id="btn-encriptar" class="btn-1">Encriptar</div>
-                <div id="btn-desencriptar" class="btn-2">Desencriptar</div>
-            </div>
-            <div class="botones-secundarios">
-                <div id="btn-eliminar">Eliminar</div>
-                <div id="btn-copiar" class="btn-3">Copiar</div>
-            </div>
-            <textarea id="resultado-texto" name="contenido-resultado"></textarea>
-        </div>
-        <div id="btns-aside">
-            <div class="icon"></div>
-            <div id="btn-recomendacion" class="btn-4">Recomendaciones</div>
-            <div class="icon"></div>
-            <div id="btn-historia" class="btn-5">Historia</div>
-            <div class="line"></div>
-            <div class="icon" id="tercer-icon"></div>
-            <input type="number" id="desplazamiento" min="0" max="25" value="0">
-        </div>
-        <div class="contenido-secundario">
-            <dialog id="dialog-recomendacion">
-                <button class="close" aria-label="Close" onclick="document.getElementById('dialog-recomendacion').close()"></button>
-                <span id="x-1"></span>
-                <span id="x-2"></span>
-                <h2>Recomendaciones</h2>
-                <img src="https://247tecno.com/wp-content/uploads/2018/01/Caracteres-especiales.jpg" alt="sim" class="img-sim" width="400px" height="150px">
-                <hr>
-                <ul>
-                    <li>El mensaje debe estar escrito solo en mayúsculas.</li>
-                    <li>Recuerda que no se deben ingresar símbolos especiales (@,-,"",/,*,etc.).</li>
-                    <li>Para mayor seguridad elije un número de mayor traslado.</li>  
-                </ul>
-            </dialog>        
-            <dialog id="dialog-historia">
-                <button class="close" aria-label="Close" onclick="document.getElementById('dialog-historia').close()">
-                </button>
-                <span id="x-1"></span>
-                <span id="x-2"></span>
-                <h2>Historia</h2>
-                <img src="https://s3.amazonaws.com/s3.timetoast.com/public/uploads/photos/8644579/ascii_text.gif?1478635874" alt="img-rascii" class="img-ascii"  width="200px" height="150px">
-                <hr>
-                <p>Una de las cosas más curiosas del código ASCII, o <b>American Standard Code for Information Interchange</b>, es su origen. Esta herramienta usada por casi todos los ordenadores del mundo actualmente, tiene sus raíces en la segunda guerra mundial.</p>
-                <p>Allá por 1945 la telegrafía necesitaba de un código estándar para transmitir la información. La compañía <b>Bell</b> desarrolló su propio sistema para poder transmitir mensajes de una manera standard a través del telégrafo.</p>
-                <p>Y menos de veinte años después, en 1963, el <b>Comité Estadounidense de Estándares</b> constituyó el código ASCII oficialmente. En un primer momento solo incluía letras mayúsculas y números; cuatro años más tarde se añadieron las letras minúsculas y algunos caracteres más, formando lo que conocemos como US-ASCII.</p>
-            </dialog>
-        </div>  
-    </div> 
-    <div id="footer">
-      <p>© Copyright 2024 - Coders. All rights reserved.</p>
-    </div>
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/ventana.js"></script>
-  </body>
-  </html>
+function encriptar() {
+    let texto = document.getElementById("ingresar-texto").value;
+  
+    let textoCifrado = texto
+        .replace(/A/g, "65")
+        .replace(/B/g, "66")
+        .replace(/C/g, "67")
+        .replace(/D/g, "68")
+        .replace(/E/g, "69")
+        .replace(/F/g, "70")
+        .replace(/G/g, "71")
+        .replace(/H/g, "72")
+        .replace(/I/g, "73")
+        .replace(/J/g, "74")
+        .replace(/K/g, "75")
+        .replace(/L/g, "76")
+        .replace(/M/g, "77")
+        .replace(/N/g, "78")
+        .replace(/O/g, "79")
+        .replace(/P/g, "80")
+        .replace(/Q/g, "81")
+        .replace(/R/g, "82")
+        .replace(/S/g, "83")
+        .replace(/T/g, "84")
+        .replace(/U/g, "85")
+        .replace(/V/g, "86")   
+        .replace(/W/g, "87")
+        .replace(/X/g, "88")
+        .replace(/Y/g, "89")
+        .replace(/Z/g, "90")
+        .replace(/Ñ/g, "165")
+  
+    if (texto.length !== 0) {
+        document.getElementById("resultado-texto").value = textoCifrado;
+    } else {
+        alert("Debes ingresar algún texto para encriptar");
+    }
+  }
+  
+  function desencriptar() {
+    let textoCifrado = document.getElementById("ingresar-texto").value;
+  
+    let textoOriginal = textoCifrado
+        .replace(/65/g, "A")
+        .replace(/66/g, "B")
+        .replace(/67/g, "C")
+        .replace(/68/g, "D")
+        .replace(/69/g, "E")
+        .replace(/70/g, "F")
+        .replace(/71/g, "G")
+        .replace(/72/g, "H")
+        .replace(/73/g, "I")
+        .replace(/74/g, "J")
+        .replace(/75/g, "K")
+        .replace(/76/g, "L")
+        .replace(/77/g, "M")
+        .replace(/78/g, "N")
+        .replace(/79/g, "O")
+        .replace(/80/g, "P")
+        .replace(/81/g, "Q")
+        .replace(/82/g, "R")
+        .replace(/83/g, "S")
+        .replace(/84/g, "T")
+        .replace(/85/g, "U")
+        .replace(/86/g, "V")
+        .replace(/87/g, "W")
+        .replace(/88/g, "X")
+        .replace(/89/g, "Y")
+        .replace(/90/g, "Z")
+        .replace(/165/g, "Ñ")
+  
+    if (textoCifrado.length !== 0) {
+        document.getElementById("resultado-texto").value = textoOriginal;
+    } else {
+        alert("Debes ingresar algún texto para desencriptar");
+    }
+  }
+  
+  const textarea = document.getElementById("resultado-texto");
+  const button = document.getElementById("btn-copiar");
+  
+  button.addEventListener("click", async () => {
+    try {
+      textarea.select();
+      await navigator.clipboard.writeText(textarea.value);
+      button.innerText = "Copiado";
+      setTimeout(() => {
+        getSelection().removeAllRanges();
+        button.innerText = "Copiar";
+      }, 1800);
+    } catch (error) {
+      alert(error);
+    }
+  });
+  
+  document.getElementById("btn-encriptar").addEventListener("click", function() {
+    encriptar();
+  })
+  document.getElementById("btn-desencriptar").addEventListener("click", function() {
+    desencriptar();
+  })
+  document.getElementById("btn-eliminar").addEventListener("click", function() {
+    document.getElementById("ingresar-texto").value = "";
+    document.getElementById("resultado-texto").value = "";
+  });
